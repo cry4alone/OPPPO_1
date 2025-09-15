@@ -1,15 +1,9 @@
-namespace OPPPO_1.Entities
+namespace OPPPO1.Entities
 {
-    public abstract class WorkOfArt
+    internal abstract class WorkOfArt(string name, int yearOfCreation)
     {
-        public required string Name { get; set; }
-        public int YearOfCreation { get; set; }
-
-        public WorkOfArt(string name, int yearOfCreation)
-        {
-            Name = name;
-            YearOfCreation = yearOfCreation;
-        }
+        public required string Name { get; set; } = name;
+        public int YearOfCreation { get; set; } = yearOfCreation;
 
         public virtual void Print()
         {

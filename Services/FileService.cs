@@ -1,6 +1,6 @@
-namespace OPPPO_1.Services
+namespace OPPPO1.Services
 {
-    public class FileService(string filePath)
+    internal class FileService(string filePath)
     {
         private readonly string _filePath = filePath;
 

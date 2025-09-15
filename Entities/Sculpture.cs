@@ -1,13 +1,8 @@
-namespace OPPPO_1.Entities
+namespace OPPPO1.Entities
 {
-    public class Sculpture : WorkOfArt
+    internal class Sculpture(string name, int yearOfCreation, string material) : WorkOfArt(name, yearOfCreation)
     {
-        public required string Material { get; set; }
-
-        public Sculpture(string name, int yearOfCreation, string material) : base(name, yearOfCreation)
-        {
-            Material = material;
-        }
+        public required string Material { get; set; } = material;
 
         public override void Print()
         {

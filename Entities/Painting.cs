@@ -1,13 +1,8 @@
-namespace OPPPO_1.Entities
+namespace OPPPO1.Entities
 {
-    public class Painting : WorkOfArt
+    internal class Painting(string name, int yearOfCreation, string painterName) : WorkOfArt(name, yearOfCreation)
     {
-        public required string PainterName { get; set; }
-
-        public Painting(string name, int yearOfCreation, string painterName) : base(name, yearOfCreation)
-        {
-            PainterName = painterName;
-        }
+        public required string PainterName { get; set; } = painterName;
 
         public override void Print()
         {
