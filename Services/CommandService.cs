@@ -1,30 +1,46 @@
-using System;
-using System.Collections.Generic;
-using System.Globalization;
-using OPPPO1.Entities;
-
 namespace OPPPO1.Services
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Globalization;
+    using OPPPO1.Entities;
+
+    /// <summary>
+    /// Сервис для выполнения команд над коллекцией произведений искусства.
+    /// </summary>
     internal static class CommandService
     {
+        /// <summary>
+        /// Выполняет список команд над коллекцией произведений искусства.
+        /// </summary>
+        /// <param name="commands">Список команд для выполнения.</param>
+        /// <param name="workOfArts">Коллекция произведений искусства.</param>
         public static void ExecuteCommands(List<string> commands, List<WorkOfArt> workOfArts)
         {
             foreach (var command in commands)
             {
                 var parts = command.Split(';');
-                if (parts.Length == 0 || string.IsNullOrWhiteSpace(parts[0])) continue;
+                if (parts.Length == 0 || string.IsNullOrWhiteSpace(parts[0]))
+                {
+                    continue;
+                }
+
                 switch (parts[0].ToLower(System.Globalization.CultureInfo.CurrentCulture))
                 {
                     case "add":
-                        if (parts.Length < 3) break;
+                        if (parts.Length < 3)
+                        {
+                            break;
+                        }
+
                         if (parts[1].Equals("painting", StringComparison.OrdinalIgnoreCase) && parts.Length >= 5)
                         {
-                            Painting painting = new(parts[2],
+                            Painting painting = new (parts[2],
                                                     yearOfCreation: int.Parse(parts[3], CultureInfo.InvariantCulture),
                                                     parts[4])
                             {
                                 Name = parts[2],
-                                PainterName = parts[4]
+                                PainterName = parts[4],
                             };
                             workOfArts.Add(painting);
                         }
@@ -33,10 +49,11 @@ namespace OPPPO1.Services
                             var sculpture = new Sculpture(parts[2], int.Parse(parts[3], CultureInfo.InvariantCulture), parts[4])
                             {
                                 Name = parts[2],
-                                Material = parts[4]
+                                Material = parts[4],
                             };
                             workOfArts.Add(sculpture);
                         }
+
                         break;
                     case "remove":
                         if (parts.Length == 4 && parts[1] == "YearOfCreation" && parts[2] == "<")
@@ -46,6 +63,7 @@ namespace OPPPO1.Services
                                 workOfArts.RemoveAll(art => art.YearOfCreation < year);
                             }
                         }
+
                         break;
                     case "display":
                         Console.WriteLine("Текущий список объектов:");
@@ -53,6 +71,7 @@ namespace OPPPO1.Services
                         {
                             art.Print();
                         }
+
                         break;
                 }
             }

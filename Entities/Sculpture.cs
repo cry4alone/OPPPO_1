@@ -1,15 +1,29 @@
+// <copyright file="Sculpture.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
+
 namespace OPPPO1.Entities
 {
-    internal class Sculpture(string name, int yearOfCreation, string material) : WorkOfArt(name, yearOfCreation)
+    /// <summary>
+    /// Представляет скульптуру как произведение искусства.
+    /// </summary>
+    internal class Sculpture(string name, int yearOfCreation, string material)
+        : WorkOfArt(name, yearOfCreation)
     {
-        public required string Material { get; set; } = material;
+        /// <summary>
+        /// Gets or sets материал скульптуры.
+        /// </summary>
+        required public string Material { get; set; } = material;
 
+        /// <summary>
+        /// Выводит информацию о скульптуре в консоль.
+        /// </summary>
         public override void Print()
         {
             Console.WriteLine("================== Скульптура ===================");
-            Console.WriteLine($"Название: {Name}");
-            Console.WriteLine($"Год создания: {YearOfCreation}");
-            Console.WriteLine($"Материал: {Material}");
+            Console.WriteLine($"Название: {this.Name}");
+            Console.WriteLine($"Год создания: {this.YearOfCreation}");
+            Console.WriteLine($"Материал: {this.Material}");
             Console.WriteLine("=================================================");
             Console.WriteLine();
         }

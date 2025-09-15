@@ -2,8 +2,17 @@
   "$schema": "https://raw.githubusercontent.com/DotNetAnalyzers/StyleCopAnalyzers/master/StyleCop.Analyzers/StyleCop.Analyzers/Settings/stylecop.schema.json",
   "settings": {
     "documentationRules": {
-      "companyName": "SFU",
-      "copyrightText": "Copyright (c) {companyName}. All rights reserved."
+      "fileHeaderTemplate": "",
+      "companyName": "",
+      "copyrightText": "",
+      "xmlHeader": false
+    },
+    "rules": {
+      "documentationRules": {
+        "fileHeader": {
+          "enabled": false
+        }
+      }
     }
   }
 }
