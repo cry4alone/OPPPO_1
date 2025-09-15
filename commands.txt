@@ -2,8 +2,6 @@ Display
 Add;Painting;Мона Лиза;1503;Леонардо да Винчи
 Add;Sculpture;Давид;1504;Мрамор
 Add;Painting;Звёздная ночь;1889;Винсент Ван Гог
-Add;Painting;Крик;1893;Эдвард Мунк
-Add;Sculpture;Мыслитель;1904;Бронза
 Add;Sculpture;Венера Милосская;130;Мрамор
 Display
 Remove;YearOfCreation;<;1890

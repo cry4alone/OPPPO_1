@@ -6,7 +6,7 @@ namespace OPPPO_1.Services
 {
     public class CommandService
     {
-        public void ExecuteCommands(List<string> commands, List<WorkOfArt> workOfArts)
+        public static void ExecuteCommands(List<string> commands, List<WorkOfArt> workOfArts)
         {
             foreach (var command in commands)
             {
