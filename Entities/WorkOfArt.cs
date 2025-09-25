@@ -1,7 +1,3 @@
-// <copyright file="WorkOfArt.cs" company="PlaceholderCompany">
-// Copyright (c) PlaceholderCompany. All rights reserved.
-// </copyright>
-
 namespace OPPPO1.Entities
 {
     /// <summary>
@@ -14,7 +10,7 @@ namespace OPPPO1.Entities
         /// <summary>
         /// Gets or sets название произведения искусства.
         /// </summary>
-        required public string Name { get; set; } = name;
+        public string Name { get; set; } = name;
 
         /// <summary>
         /// Gets or sets год создания произведения искусства.

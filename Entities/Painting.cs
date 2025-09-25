@@ -12,7 +12,7 @@ namespace OPPPO1.Entities
         /// <summary>
         /// Gets or sets имя автора картины.
         /// </summary>
-        required public string PainterName { get; set; } = painterName;
+        public string PainterName { get; set; } = painterName;
 
         /// <summary>
         /// Выводит информацию о картине в консоль.

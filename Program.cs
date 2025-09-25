@@ -1,4 +1,8 @@
-﻿namespace OPPPO1
+﻿using System.Runtime.CompilerServices;
+
+[assembly: InternalsVisibleTo("OPPPO1.Tests")]
+
+namespace OPPPO1
 {
     using OPPPO1.Entities;
     using OPPPO1.Services;
@@ -16,7 +20,14 @@
             List<WorkOfArt> workOfArts = [];
             var fileService = new FileService("commands.txt");
             var commands = fileService.ReadCommands();
-            CommandService.ExecuteCommands(commands, workOfArts);
+            try
+            {
+                CommandService.ExecuteCommands(commands, workOfArts);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
         }
     }
 }

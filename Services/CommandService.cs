@@ -22,7 +22,7 @@ namespace OPPPO1.Services
                 var parts = command.Split(';');
                 if (parts.Length == 0 || string.IsNullOrWhiteSpace(parts[0]))
                 {
-                    continue;
+                    throw new ArgumentException("Commands can't be empty");
                 }
 
                 switch (parts[0].ToLower(System.Globalization.CultureInfo.CurrentCulture))
@@ -73,6 +73,8 @@ namespace OPPPO1.Services
                         }
 
                         break;
+                    default:
+                        throw new ArgumentException("Invalid command");
                 }
             }
         }

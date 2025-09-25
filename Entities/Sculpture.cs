@@ -1,7 +1,3 @@
-// <copyright file="Sculpture.cs" company="PlaceholderCompany">
-// Copyright (c) PlaceholderCompany. All rights reserved.
-// </copyright>
-
 namespace OPPPO1.Entities
 {
     /// <summary>
@@ -13,7 +9,7 @@ namespace OPPPO1.Entities
         /// <summary>
         /// Gets or sets материал скульптуры.
         /// </summary>
-        required public string Material { get; set; } = material;
+        public string Material { get; set; } = material;
 
         /// <summary>
         /// Выводит информацию о скульптуре в консоль.
@@ -28,5 +24,4 @@ namespace OPPPO1.Entities
             Console.WriteLine();
         }
     }
-
 }
